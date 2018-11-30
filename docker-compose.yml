@@ -1,0 +1,29 @@
+version: '2'
+services:
+ pwcho2018-76511:
+  image: mysql
+  container-name: pwcho2018-76511
+  ports:
+    - "3306"
+  environment:
+   - MYSQL_ROOT_PASSWORD=root
+   - MYSQL_DATABASE=javac
+   - MYSQL_USER=MBolba
+   - MYSQL_PASSWORD=password
+  networks:
+    Bridge-Zadanie-1:
+      ipv4_address: 10.0.10.3
+      
+ java:
+  image:
+  container_name: java
+  depends_on:
+   - pwcho2018-76511
+  networks:
+   - Bridge-Zadanie-1
+
+networks:
+ Bridge-Zadanie-1:
+  driver: bridge
+ 
+
