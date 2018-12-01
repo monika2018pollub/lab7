@@ -11,7 +11,7 @@ class MyClass {
 
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/mydb", "root", null
+                    "jdbc:mysql://localhost:3306/javac", "root", null
             );
 
             String ct = "CREATE TABLE IF NOT EXISTS users (username VARCHAR(30), password VARCHAR(30), name VARCHAR(30));";
@@ -58,6 +58,6 @@ class MyClass {
             }
         } catch(Exception e) {
             System.out.println(e);
-        }
-    }
+}
+}
 }
